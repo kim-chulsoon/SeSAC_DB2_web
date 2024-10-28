@@ -1,0 +1,25 @@
+.background{
+    display: block;
+    width: auto;
+    height: 200px;
+    background-color: orange;
+}
+
+.square{
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin-right: 30px;
+}
+
+#html{
+    background-color: skyblue;
+}
+
+#css{
+    background-color: green;
+}
+
+#java{
+    background-color: red;
+}

@@ -1,0 +1,13 @@
+h1{
+    text-align: center;
+}
+
+.navy{
+    background-color: navy;
+    color: white;
+}
+
+.yellow{
+    background-color: yellow;
+    color: navy;
+}
