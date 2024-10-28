@@ -1,0 +1,37 @@
+h3:hover{
+    background-color: black;
+    color: white;
+}
+
+textarea:hover{
+    background-color: pink;
+    border: solid;
+}
+
+input[id="red"]:checked+label{
+    display: inline-block;
+    background-color: red;
+    color: white;
+}
+
+input[id="blue"]:checked+label{
+    display: inline-block;
+    background-color: blue;
+    color: white;
+}
+
+input[id="yellow"]:checked+label{
+    display: inline-block;
+    background-color: yellow;
+    color: white;
+}
+
+input[value="제출"]{
+    background-color: pink;
+    color: white;
+}
+
+input[value="제출"]:active{
+    background-color: gray;
+    color: pink;
+}
