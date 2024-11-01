@@ -1,0 +1,23 @@
+.lion{
+    background-color: skyblue;
+    width: 800px;
+    height: 500px;
+    background-image: url('/02_css/img/lion.png');
+    border: 1px solid black;
+}
+
+.lion1{
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.lion2{
+    background-size: contain;
+    background-position: 100px, 30px;
+    background-repeat: no-repeat;
+}
+
+.lion3{
+    background-size: cover;
+    background-position: center;
+}
