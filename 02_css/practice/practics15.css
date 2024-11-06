@@ -1,0 +1,68 @@
+/* ex 실습
+flex 실습 - header 만들기 */
+* {
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  text-align: center;
+  color: green;
+  margin-bottom: 60px;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #ddd;
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+/* TODO: header1 ~ 3까지 완성해주세요! */
+
+/* header1 */
+.header1 {
+    /* width: 100%; */
+    background-color: gray;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    /* text-align: center; */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header1 > .menus > li{
+    margin-left: 10px;
+}
+
+/* header2 */
+.header2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header2 > .menus{
+}
+
+.header2 > .menus > li{
+}
+
+/* header3 */
+.header3 {
+}
