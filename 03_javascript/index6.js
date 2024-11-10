@@ -1,5 +1,5 @@
 // 문자열에서 사용하는 속성과 메소드
-//  length
+// length
 // toUpperCase, toLoverCase, trim, indexOf, slice
 // replace, replaceAll, repeat, split
 
