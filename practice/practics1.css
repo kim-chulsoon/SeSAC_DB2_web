@@ -1,0 +1,37 @@
+header{
+    font-weight: bolder;
+}
+.menu{
+    height: 100px;
+}
+
+.row > .flex-column{
+    margin-top: 10px;
+}
+
+.now-sale{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.goods > button{
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+
+.goods2 > button{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+@media (max-width : 768px){
+    header > .row > .menu2{
+        visibility: hidden;
+    }
+
+    header > .row > .menu > p{
+        display: none;
+    }
+}
