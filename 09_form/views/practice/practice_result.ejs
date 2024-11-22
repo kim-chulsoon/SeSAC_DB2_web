@@ -15,10 +15,16 @@
     <p>관심사 : <%=userInfo.hobby%></p>
     <hr />
     <p>이메일 : <%=userInfo.email%></p>
-    <p>좋아하는 색깔 : <%=userInfo.color%></p>
+    <span class="color">좋아하는 색깔 : <%=userInfo.color%></span>
     <br />
     <br />
     <br />
     <a href="/">메인 페이지로 돌아가기</a>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const spanColor = document.querySelector(".color");
+        spanColor.style.color = "<%=userInfo.color%>";
+      });
+    </script>
   </body>
 </html>
