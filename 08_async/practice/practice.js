@@ -1,33 +1,85 @@
-function call1(name, cb) {
-  return new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      console.log(name);
-      cb(name);
-      resolve();
-    }, 1000);
-  });
+// 기존 콜백 코드
+function call(name, cb) {
+  setTimeout(function () {
+    console.log(name);
+    cb(name);
+  }, 1000);
 }
 
-function back1(cb) {
-  return new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      console.log("back");
-      cb("back");
-      resolve();
-    }, 1000);
-  });
+function back(cb) {
+  setTimeout(function () {
+    console.log("back");
+    cb("back");
+  }, 1000);
 }
 
-function hell1(cb) {
-  setTimeout(() => {
+function hell(cb) {
+  setTimeout(function () {
     cb("callback hell");
   }, 1000);
 }
 
-call1()
-  .then(() => {
-    return back1();
-  })
-  .then(() => {
-    return hell1;
+// 콜백함수 실행
+// call("kim", function (name) {
+//   console.log(name + "반가워");
+//   back(function (text) {
+//     console.log(text + "를 실행했구나");
+//     hell(function (msg) {
+//       console.log("여기는 " + msg);
+//     });
+//   });
+// });
+
+function callPromise(name, cb) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log(name);
+      resolve(name); // cb 대신 resolve로 넘기기
+    }, 1000);
   });
+}
+
+function backPromise(cb) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      console.log("back");
+      resolve("back");
+    }, 1000);
+  });
+}
+
+function hellPromise(cb) {
+  // reject 생략 가능
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      resolve("callback hell");
+    }, 1000);
+  });
+}
+
+// then, catch
+callPromise("kim")
+  .then((result) => {
+    console.log(result + "반가워");
+    return backPromise();
+  })
+  .then((text) => {
+    // text = 이전 then의 리턴값 = "back"
+    console.log(text + "를 실행했구나");
+    return hellPromise();
+  })
+  .then((msg) => {
+    console.log("여기는 " + msg);
+  });
+
+//   async, await
+async function execute() {
+  const name = await callPromise("soon");
+  console.log(name + "반가워");
+  const back = await backPromise();
+  console.log(back + "를 실행했구나");
+  const hell = await hellPromise();
+  console.log("여기는 " + hell);
+}
+
+execute();
