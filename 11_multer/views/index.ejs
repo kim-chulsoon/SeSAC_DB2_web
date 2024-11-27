@@ -119,6 +119,32 @@
         img.src = `/${res.data.path}`;
       });
     }
-    function fileAndTextUpload() {}
+
+    // 글과 파일을 함께 업로드
+    function fileAndTextUpload() {
+      const formData = new FormData();
+      const file = document.getElementById("dynamicFile");
+      const title = document.getElementById("dynamicTitle");
+      const img = document.getElementById("img");
+
+      formData.append("dynamicFile", file.files[0]);
+      formData.append("dynamicTitle", title.value);
+
+      axios({
+        method: "post",
+        url: "dynamicUpload",
+        data: formData,
+        headers: {
+          "content-Type": "multipart/form-data",
+        },
+      }).then((res) => {
+        console.log(res.data);
+        console.log(title);
+        const img = document.querySelector("img");
+        img.src = `/${res.data.path}`;
+        const title1 = document.querySelector(".tit");
+        title1.textContent = `${res.data.dynamicTitle}`;
+      });
+    }
   </script>
 </html>

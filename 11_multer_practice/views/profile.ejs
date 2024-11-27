@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 결과창</title>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- style -->
+    <link rel="stylesheet" href="/static/myPage.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1><%`${name}`%>님의 마이페이지</h1>
+      <img src="`/<%= src %>`" alt="프로필 이미지" width="200" />
+      <p>
+        <span>아이디</span>
+        <span><%= id %></span>
+      </p>
+      <p>
+        <span>비밀번호</span>
+        <span><%= pw %></span>
+      </p>
+      <p>
+        <span>이름</span>
+        <span><%= name %></span>
+      </p>
+      <p>
+        <span>나이</span>
+        <span><%= age %></span>
+      </p>
+    </div>
+  </body>
+  <!-- script -->
+  <script>
+    const img = document.querySelector("img");
+  </script>
+</html>

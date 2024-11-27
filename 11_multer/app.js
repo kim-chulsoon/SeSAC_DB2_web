@@ -17,6 +17,11 @@ app.use(express.json());
 app.use("/static", express.static(__dirname + "/public"));
 app.use("/upload", express.static(__dirname + "/upload"));
 
+// index
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
 // multer 설정
 const upload = multer({
   dest: "upload/",
@@ -43,11 +48,6 @@ const uploadDetail = multer({
   }),
 
   limits: { fieldSize: 5 * 1024 * 1024 }, //5mb
-});
-
-// index
-app.get("/", (req, res) => {
-  res.render("index");
 });
 
 // upload
@@ -157,8 +157,11 @@ app.post(
 // 동적 폼 파일 업로드
 app.post("/dynamicUpload", uploadDetail.single("dynamicFile"), (req, res) => {
   console.log(req.file);
-  res.send(req.file);
+  console.log(req.body);
+  res.send({ ...req.file, ...req.body });
 });
+
+//
 
 // port
 app.listen(PORT, () => {
