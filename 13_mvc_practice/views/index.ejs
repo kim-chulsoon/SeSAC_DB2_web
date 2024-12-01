@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC 실습</title>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form name="register">
+      <label for="id">
+        <span>아이디</span>
+        <input type="text" name="id" id="id" placeholder="id" required />
+      </label>
+      <br />
+      <label for="pw">
+        <span>비밀번호</span>
+        <input
+          type="password"
+          name="pw"
+          id="pw"
+          placeholder="password"
+          required
+        />
+      </label>
+      <br /><br />
+      <button type="button" onclick="clickLogin()">로그인</button>
+    </form>
+    <div class="result"></div>
+  </body>
+  <!-- script -->
+  <script>
+    function clickLogin() {
+      const form = document.forms["register"];
+      const result = document.querySelector(".result");
+      const data = {
+        id: form.id.value,
+        pw: form.pw.value,
+      };
+
+      console.log(data);
+      console.log(form.id.checkValidity());
+      console.log(form.pw.checkValidity());
+      if (!form.id.checkValidity() || !form.pw.checkValidity()) {
+        result.innerText = "아이디와 비밀번호는 필수입니다";
+        return;
+      }
+
+      axios({
+        url: "/",
+        method: "post",
+        data: data,
+      })
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.isSuccess) {
+            result.textContent = `${res.data.id}님 로그인 성공`;
+          } else {
+            result.textContent = "아이디 또는 패스워드 오류입니다";
+          }
+        })
+        .catch((error) => {
+          result.textContent = "서버 오류";
+        });
+    }
+  </script>
+</html>
