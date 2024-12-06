@@ -1,7 +1,8 @@
 "use strict";
-
 const Sequelize = require("sequelize");
-const config = require(__dirname + "/../config/config.json")["development"];
+let config = require(__dirname + "/../config/config.js");
+console.log(config);
+config = config["development"];
 console.log("config", config);
 const db = {};
 
@@ -12,23 +13,23 @@ let sequelize = new Sequelize(
   config
 );
 
+// 설정 정보를 sequelize 라는 key안에 넣어주는 중http://localhost:8080/visitors
 db.sequelize = sequelize;
-// let sequelize를 sequelize라는 키 안에 넣어주는 중
 // {
-//   sequelize : sequelize
+//   sequelize:sequelize
 // }
+// 시퀄라이즈 모듈을 Sequelize 라는 key안에 넣어주는 중
 db.Sequelize = Sequelize;
-// Sequelize 모듈을 Sequelize라는 키 안에 넣어주는 중
 // {
-//   sequelize : sequelize
-//   Sequelize : Sequelize
+//   sequelize:sequelize,
+//   Sequelize: Sequelize
 // }
 
 db.Visitor = require("./Visitor")(sequelize, Sequelize);
 // {
-//   sequelize : sequelize
-//   Sequelize : Sequelize
-//   Visitor : visitor의 모델
+//   sequelize:sequelize,
+//   Sequelize: Sequelize,
+//   Visitor: visitor의 모델
 // }
 
-module.exports = db;
+module.exports = db; // app.js
