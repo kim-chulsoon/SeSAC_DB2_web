@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 const { sequelize } = require("./models/Mindex");
+const dotenv = require("dotenv");
+dotenv.config();
 // db={sequelize:~~~, Sequelize:~~~}
 // const {sequelize} = db;
 
