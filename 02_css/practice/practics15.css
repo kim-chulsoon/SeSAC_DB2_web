@@ -9,6 +9,8 @@ flex 실습 - header 만들기 */
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 ul {
@@ -35,32 +37,32 @@ header {
 
 /* header1 */
 .header1 {
-    /* width: 100%; */
-    background-color: gray;
-    display: flex;
-    /* flex-wrap: wrap; */
-    align-items: center;
-    justify-content: space-between;
-    /* text-align: center; */
-    font-size: 1.5rem;
-    font-weight: bold;
+  /* width: 100%; */
+  background-color: gray;
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: space-between;
+  /* text-align: center; */
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.header1 > .menus > li{
-    margin-left: 10px;
+.header1 > .menus > li {
+  margin-left: 10px;
 }
 
 /* header2 */
 .header2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.header2 > .menus{
+.header2 > .menus {
 }
 
-.header2 > .menus > li{
+.header2 > .menus > li {
 }
 
 /* header3 */
