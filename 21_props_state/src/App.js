@@ -17,8 +17,19 @@ import {
   Emoji,
 } from "./components/ex/HandlerEx";
 import PororoObj from "./components/ex/Change";
+import EntirePractice from "./components/Practice/EntirePractice";
+import PropsMap from "./components/PropsMap";
+import PropsMap2 from "./components/PropsMap2";
+import Alphabet from "./components/Alhabet";
+import { Map1, Map2 } from "./components/Practice/MapPractice";
 
 function App() {
+  const arr = [
+    { name: "peach", krPrice: 10000, number: 5 },
+    { name: "strawberry", krPrice: 15000, number: 1 },
+    { name: "mango", krPrice: 20000, number: 5 },
+    { name: "melon", krPrice: 30000, number: 1 },
+  ];
   return (
     <div>
       {/* <h2>Props 사용</h2>
@@ -43,7 +54,7 @@ function App() {
       <h2>Event</h2>
       <SyntheticEvent />
       <Counter /> */}
-
+      {/* 
       <h2>Practice</h2>
       <h3>ClassState</h3>
       <ClassStateP />
@@ -59,6 +70,14 @@ function App() {
       <Emoji />
       <h3>핸들러5</h3>
       <PororoObj />
+      <h2>종합실습</h2>
+      <EntirePractice /> */}
+      {/* <PropsMap arr={arr} />
+      <PropsMap2 arr={arr} />
+      <PropsMap2 /> */}
+      {/* <Alphabet /> */}
+      <Map1 />
+      <Map2 />
     </div>
   );
 }
