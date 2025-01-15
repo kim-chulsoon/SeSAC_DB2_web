@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export function Map1() {
   const [list, setList] = useState([
@@ -67,6 +67,16 @@ export function Map1() {
 }
 
 export function Map2() {
+  const inputRef1 = useRef();
+  const inputRef2 = useRef();
+
+  console.log(inputRef1.current.value);
+  const handleFocus = () => {
+    inputRef1.current.value !== ""
+      ? inputRef2.current.focus()
+      : inputRef1.current.focus();
+  };
+
   const [list, setList] = useState([]);
 
   const [inputName, setInputName] = useState("");
@@ -112,6 +122,7 @@ export function Map2() {
         <input
           type="text"
           placeholder="작성자"
+          ref={inputRef1}
           value={inputName}
           onChange={(e) => {
             setInputName(e.target.value);
@@ -122,13 +133,14 @@ export function Map2() {
         <input
           type="text"
           placeholder="제목"
+          ref={inputRef2}
           value={inputTitle}
           onChange={(e) => {
             setInputTitle(e.target.value);
           }}
         />
         {"     "}
-        <button onClick={addList}>작성</button>
+        <button onClick={(addList, handleFocus)}>작성</button>
       </fieldset>
       <br />
 

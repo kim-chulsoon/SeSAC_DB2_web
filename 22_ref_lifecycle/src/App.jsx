@@ -1,12 +1,14 @@
 import LifeCycleClass from "./components/LifecycleClass";
 import LifeCycleFunc from "./components/LifecycleFunc";
-import FakePost from "./components/practice/FakePost";
-import Container from "./components/practice/LifecyclePractice";
-import PostList from "./components/practice/LifecyclePractice";
-import RealPost from "./components/practice/RealPost";
+import FakePost from "./components/FakePost";
+import Container from "./components/LifecyclePractice";
+import PostList from "./components/LifecyclePractice";
+import RealPost from "./components/RealPost";
 import { RefClass1, RefClass2 } from "./components/RefCleass";
 import { RefFunc1, RefFunc2 } from "./components/RefFunc";
 import Test from "./components/test";
+import Ref1 from "./components/practice/Ref1";
+import Ref2 from "./components/practice/Ref2";
 
 function App() {
   return (
@@ -20,9 +22,11 @@ function App() {
       {/* <LifeCycleClass /> */}
       {/* <LifeCycleFunc /> */}
       {/* <Test /> */}
-      <Container>
+      {/* <Container>
         <RealPost />
-      </Container>
+      </Container> */}
+      {/* <Ref1 /> */}
+      <Ref2 />
     </div>
   );
 }

@@ -76,7 +76,7 @@ function App() {
       <PropsMap2 arr={arr} />
       <PropsMap2 /> */}
       {/* <Alphabet /> */}
-      <Map1 />
+      {/* <Map1 /> */}
       <Map2 />
     </div>
   );

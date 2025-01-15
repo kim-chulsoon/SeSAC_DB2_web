@@ -1,0 +1,32 @@
+.container {
+  border: 1px solid gray;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.box2 {
+  background-color: lightblue;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.box2 div {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  text-align: center;
+  line-height: 100px;
+  display: flex;
+  justify-content: center;
+  allign-items: center;
+}
+
+.first {
+  color: darkorange;
+  font-size: 1.5rem;
+}
+
+.second {
+  background-color: black;
+  border: 2px solid darkorange;
+}
