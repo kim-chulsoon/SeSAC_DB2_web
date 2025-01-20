@@ -1,20 +1,26 @@
 const initialState = 0;
 
-export const inMoney = (ref) => {
-  return { type: "inMoney", ref };
+const iNMONEY = "inMoney";
+const OUTMONEY = "outMoney";
+
+export const inMoney = (payload) => {
+  return { type: iNMONEY, payload: payload };
 };
 
-export const outMoney = (ref) => {
-  return { type: "outMoney", ref };
+export const outMoney = (payload) => {
+  return {
+    type: OUTMONEY,
+    payload: payload,
+  };
 };
 
 export const inOutReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "inMoney":
-      return state + action.ref;
+    case iNMONEY:
+      return state + action.payload;
 
-    case "outMoney":
-      return state - action.ref;
+    case OUTMONEY:
+      return state - action.payload;
 
     default:
       return state;
