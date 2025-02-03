@@ -1,1 +1,6 @@
+퍼블릭 ip
 13.125.200.133
+
+rds 엔드포인트
+rds-test.ch066si86hd1.ap-northeast-2.rds.amazonaws.com
+sesac12345!
